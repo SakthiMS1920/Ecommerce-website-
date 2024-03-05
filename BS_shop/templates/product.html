@@ -1,0 +1,43 @@
+
+{% extends "main.html" %}
+
+
+{% block content %}
+{% load static %}
+
+{% include 'navbar.html' %}
+
+<div><h1 id="nmnm" style="color:blue">kill ll them all ...</h1></div>
+<section class="bg-light py-4 my-5"><!--py-padding my-margin -->
+    <div class="container">
+      <div class="row">
+        
+        <div class="col-12" >
+          <h4 class="mb-3" ><span>{{category__name}}  Products</span></h4>  <!--margin bottom (mb)-->
+          <hr style="border-color: rgb(20, 189, 189);">
+        </div>
+        {% for items in Products %}
+        <div class="col-lg-3 col-md-4"  >
+          <div class="card my-3" style="">
+            <img src="{{items.product_image.url}}" class="card-img-top" alt="categories" style="">
+            <a href="{% url 'productdetails' category__name items.name %}"> <!--here we requesting for product name and its cztegory in url  -->
+              <div class="card-body" >
+                <h5 class="card-tittle text-primary">{{items.name}}</h5><!---->
+               <span class="float-statrt original_price"> {{ items.orginal_price}}</span>
+               <span class="float-end selling_price">{{ items.selling_price}}</span>
+                
+              </div>
+            </a>
+            
+        
+        </div>
+        </div>
+        {% endfor%}
+
+      </div>
+    </div>
+
+  </section>
+  
+{% endblock content %}
+

@@ -1,0 +1,50 @@
+
+{% extends "main.html" %}
+
+
+{% block content %}
+{% load static %}
+
+
+
+
+
+
+
+<div class="card" id="signupcard" style="background-image: url('images/kidfs.jpg');" >
+  
+  {% for message in messages%}
+  
+  <div class="alert alert-{{message.tags}}alert-dismissible fade show" role="alert"> <!--message.tags  is passing tag from views func to disply in html pages, tags like warning error-->    
+    <strong>{{message}}</strong>  <!--here message is the messages from views functions-->    
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+  {% endfor %}
+
+  <form action="{%url 'logs' %}" method="post">
+    {% csrf_token %}
+    <h2>LogIn</h2>
+    <label for="name">User Name</label> <!----> 
+    <div class="form-group">
+     <input type="name" class="form=control" id="usname" name="usname" required>
+    </div>
+     
+     <label for="pass1">Password</label>
+     <div class="form-group">
+      <input type="password" class="form=control" id="pass1" name="pass1" required>
+     </div>
+     
+     <br>
+     <label  id="ccv"><button type="submit" class="btn"><span>LogIn</span></button></label>
+    
+     <label  id="ccv"><span class="spa">New to ABScart?</span>&nbsp<a href="{% url 'registration'%}">Create an account</a></label>
+  </form>
+  
+
+
+</div>
+
+
+  {% endblock content %}
+ 

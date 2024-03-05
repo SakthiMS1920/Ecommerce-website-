@@ -1,0 +1,109 @@
+{% extends "main.html" %}
+
+{% block content %}
+{% include 'navbar.html' %}
+
+    <!--single product details-->
+  <div class="container" >
+  <div class="small-container  single_product" style="" >
+
+    <div class="row">
+
+  
+      <div class="col-6 cloa" id="vv" style="" >
+      
+          <img src="{{Singleprod.product_image.url}}" id="main-img" >
+          <br>
+          <br>
+          <div class="small-img-row">
+            <div class="small-img-col">
+              <img src="{Singleprod.product_image.url}}"  class="second-img">
+            </div>
+            <div class="small-img-col" >
+              <img src="{Singleprod.product_image1.url}}" class="second-img">
+            </div>
+            <div class="small-img-col" >
+              <img src="{Singleprod.product_image2.url}}" class="second-img">
+            </div>
+            <div class="small-img-col" >
+              <img src="{Singleprod.product_image3.url}}" class="second-img">
+            </div>
+          
+          </div>
+      </div>
+      
+      <div class="col-4 clos" style="">
+        <p>Home</p>
+        <h1 id="hh">{{Singleprod.name}}</h1>
+        <h1 id="hh">{{Singleprod.product.id}}</h1>
+
+        <h5 id="price" class="float-statrt original_price">{{Singleprod.orginal_price}}</h5> <h5 id="price" class="float-middle selling_price">{{Singleprod.selling_price}}</h5>
+
+        {% for items in fashion %}
+            {% if  Singleprod.category.name == items.category.name  %}
+              <select style=>
+                <option>Select size</option>
+                <option>l</option>
+                <option>xl</option>
+                <option>xxl</option>
+              </select>
+      
+            {% else %} 
+            <br>
+            
+            {% endif %}
+
+
+
+        {% endfor%}
+       
+        
+       
+       
+
+        <input type="number" value="1">
+        
+        <a href="{% url 'cartt' Singleprod.category.name Singleprod.name Singleprod.id   %}" class="btn" style="background-color: blanchedalmond;">Add to Cart</a>
+       
+       
+        <h3>Product Details</h3>
+        <p>{{Singleprod.description}}</p>
+        <h4>{{productname.name}}</h4>
+        
+        <p>{{Singleprod.id}}</p>
+        {% for items in pid %}
+        <h4>{{items.name}}</h4>
+        
+        {% endfor%}
+       
+    </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var mainimg = document.getElementById("main-img");
+  var secondimg = document.getElementsByClassName("second-img");
+
+
+  secondimg[0].onclick = function(){
+    mainimg.src = secondimg[0].src;
+  }
+
+  secondimg[1].onclick = function(){
+    mainimg.src = secondimg[1].src;
+  }
+
+  secondimg[2].onclick = function(){
+    mainimg.src = secondimg[2].src;
+  }
+  
+  
+  secondimg[3].onclick = function(){
+    mainimg.src = secondimg[3].src;
+  }
+
+</script>
+
+
+{% endblock content %}

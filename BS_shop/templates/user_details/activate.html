@@ -1,0 +1,8 @@
+  {% autoescape off %} <!--passing content from py file to html file like for loop --> 
+
+  HI,{{user.username}} <!--fetching from render to string --> 
+  Please Click This below to verify your account
+
+  http://{{domain}}{% url 'activate'  uidb64=uid token=token %}<!--fetching from render to string --> 
+  
+  {% endautoescape %}

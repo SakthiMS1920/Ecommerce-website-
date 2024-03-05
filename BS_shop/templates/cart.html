@@ -1,0 +1,9 @@
+hh
+{% for j in cartitem%}
+<h1>{{j.product}}</h1>
+<img src="{{j.product.product_image.url}}" id="main-img" >
+<h1>{{j.product.id}}</h1>
+<h1>{{j.product.category}}</h1>
+<h1>{{j.product.orginal_price}}</h1>
+<h1>{{j.product.description}}</h1>
+{% endfor%}

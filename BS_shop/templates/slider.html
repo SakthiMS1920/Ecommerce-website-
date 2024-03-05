@@ -1,0 +1,98 @@
+{% extends "main.html" %}
+
+
+{% block content %}
+{% load static %}
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src=" {% static "imagess/grcry.jpg" %}" class="d-block w-100" alt="">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static "imagess/kidfs.jpg" %}" class="d-block w-100" alt="">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static "imagess/kidply (4).jpg" %}" class="d-block w-100" alt="">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+
+<section class="bg-light py-4 my-5"><!--py-padding my-margin -->
+<div class="container" >
+<div class="row" >
+  <div class="col-12" >
+    <h4 class="mb-3 ml-8">Best of Laptops</h4  >  <!--margin bottom (mb)-->
+    <hr style="border-color: rgb(20, 189, 189);">
+  </div>
+
+  <div class="container"  >
+    <div class="row" id="elec_card">
+  {% for items in Products %}
+  <div class="col-lg-2 col-md-4" >
+    <div class="card"  style="width: 210px;">
+     <img id = "img1" src="{{items.product_image.url}}" class="" alt="categories" style="width: 100%;" >
+     <div class="card-body">
+      <a href= "{% url 'productdetails' items.category.name items.name  %}"> <h5 class="card-tittle text-primary">{{items.name}}</h5> </a> <!--alrdy having item name and its categ name in product function so we requesting item nam and catg name in url the product detail url having those two para meters-->
+      <h5 class="card-tittle text-primary">{{items.category.id}}</h5>
+     </div>
+    </div>
+  </div>
+  {% endfor%}
+
+     </div>
+  </div>
+
+</div>
+</div>
+
+</section>
+
+
+
+
+<section class="bg-light py-4 my-5"><!--py-padding my-margin -->
+<div class="container">
+<div class="row">
+  <div class="col-12" >
+    <h4 class="mb-3 ml-8" id = "slidcont"><span>Top Deals</span></h4>  <!--margin bottom (mb)-->
+    <hr style="border-color: rgb(20, 189, 189);">
+  </div>
+
+  <div class="container"  >
+    <div class="row" id="elec_card">
+  {% for items in Topdeals %}
+  <div class="col-lg-2 col-md-4" >
+    <div class="card"  style="width: 210px;">
+     <img id = "img1" src="{{items.product_image.url}}" class="" alt="categories" style="width: 100%;" >
+     <div class="card-body">
+      <a href= "{% url 'productdetails' items.category.name items.name %}"><h5 class="card-tittle text-primary">{{items.name}}</h5></a>
+     
+     </div>
+    </div>
+  </div>
+  {% endfor%}
+
+     </div>
+  </div>
+
+
+</div>
+</div>
+
+</section>
+
+
+{% endblock content %}
+
+
+

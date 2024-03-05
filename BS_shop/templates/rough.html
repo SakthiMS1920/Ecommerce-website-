@@ -1,0 +1,219 @@
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    
+
+
+    #h4{
+        color: rgb(0, 64, 255);
+        display: flex;
+        justify-content: center;
+    }
+    .catimg{
+        background-color: blue;
+        height: 10%;
+        width: 80%;
+        border-radius: 50%;
+    }
+    .cnt1{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .cnt1{
+        border: 2px solid black;
+        width: 10%;
+    }
+    .cnt2 p{
+        background-color: aquamarine;
+    }
+    .cnt2{
+        height: 5vh;
+        width: 10%;
+    }
+
+    <!--js page linking
+   {% block contentsss %}
+   <section class="bg-light py-4 my-5">
+    <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h4 id="h4" class="mb-3">CATEGORIES</h4>
+        <hr style="border-color: black;">
+      </div>
+      {% for item in Category %}
+        <div class="col-md-1 col-lg-2 col-sm-4 ">
+        <div class="card my-3" style="height:15rem" >
+          <img class="catimg" src="{{item.image.url}}" class="cardm-img-top" alt="categories" class="img-fluid" style="width:100px">
+          <div class="card-body">
+          <p class="card-tittle text-primary">{{item.name}}</p>
+        </div>
+    </div>     
+</div>
+      {% endfor%}
+ {% endblock contentsss %}
+
+ -->       
+<!--
+ {% for item in Category %}
+ <div class="container">
+ <div class="row">
+ <div class="col-md-1 col-lg-2 col-sm-4 ">
+      <div class="card " >
+      <img class="catimg" src="{{item.image.url}}" class="cardm-img-top" alt="categories" class="img-fluid" style="width:100px" >
+      <div class="card-body">
+        <p class="card-tittle text-primary">{{item.name}}</p>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+ {% endfor%}
+ <div class="container"> <P>Collections</p>
+  <div class="row">
+    {% for item in Category %}
+    <div class="col-md-2 col-lg-2 col-sm-4">
+      <div id ="cards" class="card " style="width:100px"> 
+        <img class="catimg" src="{{item.image.url}}" class="img-fluid" alt="categories" style="width:100px">
+      
+     
+      <div class="card-body"  style="width:100px">
+        <p class="card-tittle text-primary">{{item.name}}</p>
+      </div>
+    </div>
+      
+    </div>
+    {% endfor%}
+
+ </div>
+</div>
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0"> 
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="static/main.css"><!--css page linking -->
+    <script src="https://kit.fontawesome.com/4385215774.js" crossorigin="anonymous"></script><!--font linking-->
+    <script src="static/main.js"></script>
+    <title>B-MART</title><!--js page linking-->
+</head>
+<body>
+    {% include 'navbar.html' %}  
+
+  
+</body>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+     
+  
+</head>
+<body>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="bg-light py-4 my-5"><!--py-padding my-margin -->
+  <div class="container">
+    <div class="row">
+      <div class="col-12" >
+        <h4 class="mb-3">Best in Electronics</h4>  <!--margin bottom (mb)-->
+        <hr style="border-color: azure;">
+      </div>
+      {% for items in Products %}
+      <div class="col-lg-2 col-md-4" >
+        <div class="card" style="">
+          <img src="{{items.product_image.url}}" class="card-img-top" alt="categories" style="">
+         <div class="card-body">
+          <h5 class="card-tittle text-primary">{{items.name}}</h5>
+          {{items.quantity}}<br>
+          {{items.vendor}}<br>
+          {{items.description}}<br>
+          {{items.productimage}}
+
+         </div>
+      </div>
+  </div>
+      {% endfor%}
+      
+
+
+    </div>
+  </div>
+
+</section>
+ -->
+
+ """""
+
+ <section class="bg-light py-4 my-5"><!--py-padding my-margin -->
+  <div class="container">
+    <div class="row">
+      <div class="col-12" >
+        <h4 class="mb-3">TOP DEALS</h4>  <!--margin bottom (mb)-->
+        <hr style="border-color: rgb(20, 189, 189);">
+      </div>
+      {% for items in Products %}
+      <div class="col-lg-3 col-md-4" >
+        <div class="card" style="">
+         <img src="{{items.product_image.url}}" class="" alt="categories">
+         <div class="card-body">
+          <h5 class="card-tittle text-primary">{{items.name}}</h5>
+          {{items.vendor}}
+          {{items.category}}
+
+         </div>
+      </div>
+      </div>
+      {% endfor%}
+    </div>
+  </div>
+
+</section>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=<device-width>, initial-scale=1.0"> 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="static/main.css"><!--css page linking -->
+<link rel="stylesheet" href="static/main.css"><!--css linking cmt-->
+{% load static %}
+
+
+
+prods.html

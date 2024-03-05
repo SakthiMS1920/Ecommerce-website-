@@ -1,0 +1,57 @@
+
+{% extends "main.html" %}
+
+
+{% block content %}
+{% load static %}
+
+
+
+
+<div class="card" id="signupcard">
+
+  
+  {% for message in messages%}
+  
+  <div class="alert alert-{{message.tags}}alert-dismissible fade show" role="alert"> <!--message.tags  is passing tag from views func to disply in html pages, tags like warning error-->    
+    <strong>{{message}}</strong>  <!--here message is the messages from views functions-->    
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+  {% endfor %}
+
+    <form action="{%url 'registration'%}" method="post">
+      {% csrf_token %}
+      <h2>Looks like you're<br> new here!</h2> 
+      <label for="name">User Name</label> <!----> 
+      <div class="form-group">
+       <input type="name" class="form=control" id="usname" name="usname" required>
+      </div>
+    
+       <label for="email">Email</label>
+       <div class="form-group">
+        <input type="email" class="form=control" id="email" name="email" required>
+       </div>
+       
+       <label for="pass1">Password</label>
+       <div class="form-group">
+        <input type="password" class="form=control" id="pass1" name="pass1" required>
+       </div>
+    
+       <label for="pass2">Confirm Password</label>
+       <div class="form-group">
+        <input type="password" class="form=control" id="pass2" name="pass2" required>
+       </div>
+       <br>
+       <a href="{% url 'logs'%}"><label  id="ccv"><button type="submit" class="btn"><span>SignIn</span></button></label></a>
+       <label  id="ccv"><span class="spa">Alerady User?</span> &nbsp<a href="{% url 'logs'%}">LogIn</a></label>
+       
+    
+    
+    </form>
+  </div>
+
+
+
+ 
+  {% endblock content %}

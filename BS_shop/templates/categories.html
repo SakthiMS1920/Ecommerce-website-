@@ -1,0 +1,19 @@
+ {% extends "main.html" %}
+
+{% block content %}
+
+
+<div id="jj" class="container"> <br>   <!-- normal container-->      
+  <div  id="jj1" class="row"><!-- row instide the container-->   
+
+    {% for item in Category %}
+    <div  id="jj2" class="col-md-2 col-lg-1 col-sm-4"><!--column for medium device 2 box for one category,larger device one box for one catg  -->   
+    <a href="{% url 'product' item.name %}"><img class="" src="{{item.image.url}}" class="img-fluid" alt="categories" style="width:50px"></a><!-- image from categories model-->
+    <!-- above mentioned anchor tag item.name is category name its used to fetch products depends on their categories name the name shoud printed in urls-->   
+    <p>{{item.name}}</p><!--name from categories model-->   
+    </div>
+    {% endfor%}<!---->   
+
+  </div>
+</div>
+{% endblock content %}

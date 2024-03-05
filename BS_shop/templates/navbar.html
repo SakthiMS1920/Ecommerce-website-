@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BS_KART</title> 
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="static/main.css"><!--css linking cmt-->
+    <script src="https://kit.fontawesome.com/4385215774.js" crossorigin="anonymous"></script>  <!--font links-->      
+   
+</head>
+<body>
+   
+    <header><!--header tag -->
+    <!--logo class with nav icon  -->   
+    <div class="logo"><span style="color: rgb(233, 233, 40);">AB</span><span style="color: rgb(238, 19, 19);">S</span>KART <div class="lgo_bar"><i class="fa-solid fa-bars"></i></div></div>
+    
+    <div class="search_box"><!--search box with two icon -->
+        <form>
+            <button type="submit" name="mike" class="button1"><i class="fa-solid fa-microphone" style="color:gray;"></i></button><!-- micpho icon -->
+            <input type="text" name="Search" placeholder="Search for,Producs,Brands & More"/><!-- searc box  -->
+            <button type="submit" name="search bar" class="button2"><i class="fa-solid fa-magnifying-glass" style="color:gray;"></i> </button><!-- Search icon -->
+        </form>
+    </div>
+    <ul class="contents"><!--nav content with icons -->
+        <li><a href=""><span>Become&nbspa&nbspSeller</span><i class="fa-solid fa-store" style="color:white;"></i></a></li>
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'logss'%}"><span>logout</span><i class="fa-regular fa-user" style="color:white;"></i> </a></li>
+        {% else %}
+        <li><a href="{% url 'logs'%}"><span>Sign&nbspIn</span><i class="fa-regular fa-user" style="color:white;"></i> </a></li>
+        {% endif %}
+        <li><a href=""> <span>Wishlist</span><i class="fa-solid fa-heart-circle-plus" style="color: white"></i></a></li>
+        <li><a href=""><span>Cart </span><i class="fa-sharp fa-solid fa-cart-shopping" style="color:white;" ></i></a></li>
+    </ul>
+    
+    <div class="con2"><!--nav content with icons -->
+        <li><a href=""><span>Become&nbspa&nbspSeller </span><i class="fa-solid fa-store" style="color:white;"></i></a></li>
+        <li><a href=""><span>Sign&nbspIn</span><i class="fa-regular fa-user" style="color:white;"></i> </a></li>
+        <li><a href=""> <span>Wishlist</span><i class="fa-solid fa-heart-circle-plus" style="color: white"></i></a></li>
+        <li><a href=""><span>Cart </span><i class="fa-sharp fa-solid fa-cart-shopping" style="color:white;" ></i></a></li>
+    </div>
+    {% load static %}
+    <script src="static/main.js"></script><!-- js linking -->
+</header>
+{% block content%}
+{% endblock content%}
+</body>
+</html>
+
+

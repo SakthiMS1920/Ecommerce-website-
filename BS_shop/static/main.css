@@ -1,0 +1,448 @@
+/* body aligns*/
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+  
+}
+
+/*navigation bar css config starting*//*navigation bar css config starting*//*navigation bar css config starting*//*navigation bar css config starting*/
+/* nav bar icon disapper*/
+.lgo_bar{
+    display: none;
+}
+/* contetnts 2 disapp*/
+.con2{
+    display: none;
+}
+/* total header alignments */
+header{
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    background-color: rgb(54, 47, 217);
+    height: 5rem;
+    width: 100%;
+    padding: 5px 0;
+    position:sticky;
+    top: 0%;
+    z-index: 2;
+    
+ }
+ /* logo alters */
+.logo{
+   flex: 1;
+   display: flex;
+   margin-left: 2rem;
+   font-size: 28px;
+   color: whitesmoke;
+   font-weight: 800;
+   cursor: pointer;
+   font-style: italic;
+}
+/* search box possitioning whole class */
+.search_box{
+    flex: 1.5;
+    display: flex;
+    border-radius: 30px;
+    position: relative;
+}
+ /* search box possitioning form*/
+.search_box form{
+    display: flex;
+    height: 30px;
+    line-height: 30px;
+    background-color: white;
+    border-radius: 30px;
+    width:100%
+}   
+/* search box input box of search box */
+.search_box input{
+    font-size: 15px;
+    border: none;
+    width: 100%;
+    outline: none;
+    height: 100%;
+    padding: 0 10px;
+    color:rgb(47, 47, 255) ;
+  
+}
+/* positioning  icons of search box*/
+.search_box button{
+    border: none;
+    outline: none;
+    font-size: 20px;
+    border-radius: 30px;
+    height: 100%;
+    background-color: white;
+   
+}
+/* positioning  mike icon of search box*/
+.search_box .button1{
+    margin-left: 0.3rem;
+}
+/*positioning  search icon of search box */
+.search_box .button2{
+    margin-right: 0.3rem;
+}
+/* positioning contents*/
+.contents{
+    list-style: none;
+    flex: 2;
+    display: flex;
+    justify-content: space-evenly;
+}
+/* positioning contents li */
+.contents li{
+    margin: 0 2px;
+    margin-top: 1rem;
+}
+/*positioning contents linktag a */
+.contents a{
+    text-decoration: none;
+    font-size: 15px;
+    color: whitesmoke;
+    display: flex;
+    letter-spacing:1px ;
+    padding: 0px 20px;
+  
+}
+/* positioning contents icons i*/
+.contents li i{
+    font-size: 15px;
+    margin-left: 0.3rem;
+    display: flex;
+}
+
+/* when the width is minimazing while 1000 sc size*/
+@media screen  and (max-width: 1000px){
+    /* logo size decreases*/
+    .logo{
+        display: block;
+        font-size: 25px;
+        margin-left: 1rem;
+       
+    }
+/* search box form size decreases */
+    .search_box form{
+        margin-left: 2rem;
+        height: 25px;
+        line-height: 25px;
+        background-color: white;
+        width: 100%;
+    }   
+    /* contents padding adjusting*/
+    .contents{
+        padding: 0px -20px;
+    }
+    /*  contents span display doesn't shows only icons will display*/
+    .contents span{
+        display: block;
+        display: none;
+    }
+    /*icons adjusting*/
+    .contents li i{
+        margin-left: -1rem;
+    }
+
+
+
+}
+
+/* display sizes minimaize to tab and mobile mode*/
+@media screen  and (max-width: 785px){
+
+
+    
+/* header adjusting */
+
+header{
+    display: block;
+    background-color: rgb(54, 47, 217);
+    height: 6rem;
+    width: 100%;
+    padding: 5px 0;
+    
+ }
+/* contents icon doesn't show */
+ .contents li i{
+    display: none;
+}
+/* logo display in top*/
+    .logo{
+        display: block;
+        font-size:25px ;
+        display: flex;
+        margin-top: 1rem;
+        margin-left: 2rem;
+        
+    }
+    /* search box in center*/
+    .search_box{
+        display: block;
+        display: flex;
+        justify-content: center;
+        margin-top: 0.2rem;
+        margin-left: 2rem;
+        height: 25px;
+        line-height: 25px;
+        background-color: white;
+        width: 90%;
+        
+    }
+    /* searc nd mike butn adjusting*/
+    .search_box .button1{
+        margin-left: -1rem;
+    }
+/* contents 2 disply showing*/
+    .con2{
+        display: block;
+        list-style: none;
+        margin-top: -1rem;
+        margin-left: -100%;
+        
+    }
+    /*  contents 2 link tag a*/
+.con2 a{
+    display: block;
+    text-decoration: none;
+    font-size: 15px;
+    color: whitesmoke;
+    display: flex;
+    letter-spacing:1px ;
+    background-color:  rgb(150, 148, 184);
+    border: 1px solid white;
+    width: 20rem;
+    padding: 10px;
+}
+/* contents 2 icons*/
+.con2 li i{
+    font-size: 15px;
+    margin-left: 0.3rem;
+    display: flex;
+}
+    /* contents 2 disply in 0% positin while clicking the nav bar icon ang toggleing*/
+    .display{
+        margin-left: 0%;
+    }
+   
+/* nav bar icon placing right top*/
+    .lgo_bar{
+        display: block;
+        margin-left: 83%;
+        position: fixed;
+    }
+
+}
+
+/*navigation bar css config completed*//*navigation bar css config completed*//*navigation bar css config completed*//*navigation bar css config completed*/
+
+
+
+
+
+/*sliders css potion starting*//*sliders css potion starting*//*sliders css potion starting*/
+
+.carousel-item img{
+    object-fit: cover;
+    object-position: center;
+    height: 50vh;
+    overflow: hidden;
+}
+
+
+/*  slider product display depend on trending*/
+#img1{
+    padding: 10px;
+}
+
+#elec_card{
+  display: flex;
+  justify-content: start;
+  gap: 3rem;
+  background-color: rgb(127, 255, 127);
+ 
+}
+
+#slidcont span{
+  color: rgb(226, 43, 86);
+  background-color: aqua;
+}
+
+
+
+/*/*sliders css potion ending*//*/*sliders css potion ending*//*/*sliders css potion ending*//*/*sliders css potion ending*/
+
+
+/* categories.html contetnts*/
+
+#jj1{
+   display: flex;
+   justify-content: center;
+   gap: 1rem;
+   
+}
+p{
+    margin-top: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 900;
+}
+
+/* categories.html contetnts completed*/
+
+/* singleproduct.html contetnts starting*/
+
+
+.single_product{
+    margin-top: 80px;
+}
+
+.single_product .col-5 img{
+   padding-left: 60px;
+}
+
+.single_product .clos{
+  padding-top: 0px;
+  padding-left: 2rem;
+}
+
+.single_product h4{
+  font-size: 30px;
+  color: rgb(155, 127, 255);
+}
+
+.single_product select{
+   display: block;
+   height: 35px;
+   padding: 5px;
+   margin-top: 10px;
+   border: 1px solid blue;
+
+}
+.single_product input{
+   margin-top: 15px;
+   height: 35px;
+   width:60px;
+   padding-left: 10px;
+   font-size: 18px;
+   margin-right: 10px;
+   border: 1px solid blue;
+}
+input:focus{
+   outline: none;
+}
+.single_product .btn{
+   margin-top:-5px ;
+}
+.single_product h3{
+   margin-top: 10px;
+   font-weight: 700;
+
+
+} 
+.small-img-row{
+   display: flex;
+   justify-content: space-between;
+ 
+}
+
+.small-img-col{
+   flex-basis: 24%;
+   cursor: pointer;
+}
+.small-img-col img{
+   width: 100%;
+   border: 0.1px solid rgb(202, 199, 199);
+}
+#vv {
+  width: 40%;
+  
+}
+#main-img{
+   background-color: aqua;
+   width:100%;
+  
+} 
+
+#nil{
+    color: brown;
+    background-color: rgb(165, 149, 42);
+}
+
+
+#nmnm{
+    background-color: aqua;
+    color:blanchedalmond;
+    margin-top: 100px;
+}
+#price{
+    display: inline-block;
+    background-color: rgb(255, 89, 0);
+}
+/*  singleproduct.html  contetnts ending */
+
+
+/*  product.html  contetnts starting */
+.original_price{
+    color: blueviolet;
+}
+.selling_price{
+    color: rgb(208, 0, 21);
+}
+
+
+
+
+/*  product.html  contetnts ending */
+
+
+
+
+/* sign up starting*/
+
+#signupcard{
+    background-color: rgb(215, 217, 218);
+    display: flex;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#signupcard label{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    font-size:larger;
+    color: rgb(18, 18, 22);
+}
+#signupcard .btn{
+  background-color: rgb(46, 77, 235);
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+ 
+  
+}
+
+.form-group input{
+    width: 20rem;
+    height: 3rem;
+    font-size: larger;
+    color:brown;
+}
+
+#signupcard #ccv{
+  display: flex;
+  justify-content:center;
+}
+#signupcard h2{
+    color: #17181c;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* sign up ending*/
